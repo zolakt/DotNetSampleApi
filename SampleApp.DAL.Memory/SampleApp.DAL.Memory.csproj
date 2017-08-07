@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{68C1E82F-D723-4752-AA28-06E2AA707CE5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SampleApp.DAL.Memory</RootNamespace>
+    <AssemblyName>SampleApp.DAL.Memory</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataContext\Initializer\DatabaseInitializer.cs" />
+    <Compile Include="DataContext\Initializer\DatabaseTasksInitializer.cs" />
+    <Compile Include="DataContext\Initializer\DatabaseUsersInitializer.cs" />
+    <Compile Include="DataContext\Initializer\IDatabaseInitializer.cs" />
+    <Compile Include="DataContext\Initializer\IDatabaseTasksInitializer.cs" />
+    <Compile Include="DataContext\Initializer\IDatabaseUsersInitializer.cs" />
+    <Compile Include="DataContext\InMemoryDataContext.cs" />
+    <Compile Include="DataContext\InMemoryDataContextFactory.cs" />
+    <Compile Include="DbModels\Task.cs" />
+    <Compile Include="DbModels\User.cs" />
+    <Compile Include="DataContext\IDomainContext.cs" />
+    <Compile Include="Mapper\User\IUserDatabaseMapper.cs" />
+    <Compile Include="Mapper\Task\ITaskDatabaseMapper.cs" />
+    <Compile Include="Mapper\User\UserDatabaseMapper.cs" />
+    <Compile Include="Mapper\Task\TaskDatabaseMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\TaskRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SampleApp.Common.DAL\SampleApp.Common.DAL.csproj">
+      <Project>{824247C1-D2AF-4050-91B8-4156BC1DB714}</Project>
+      <Name>SampleApp.Common.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SampleApp.Common.Domain\SampleApp.Common.Domain.csproj">
+      <Project>{efd50130-86eb-4631-9687-24852f57446a}</Project>
+      <Name>SampleApp.Common.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SampleApp.Common\SampleApp.Common.csproj">
+      <Project>{6726FEC3-514B-420A-93DC-4F391083BD9D}</Project>
+      <Name>SampleApp.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SampleApp.Domain\SampleApp.Domain.csproj">
+      <Project>{0cf702bf-f486-43ce-9184-e5eaddeab7b4}</Project>
+      <Name>SampleApp.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

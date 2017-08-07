@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0CF702BF-F486-43CE-9184-E5EADDEAB7B4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SampleApp.Domain</RootNamespace>
+    <AssemblyName>SampleApp.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Address\AddressBusinessRules.cs" />
+    <Compile Include="Task\Specifications\TaskUserRequired.cs" />
+    <Compile Include="Task\Specifications\TaskTimeRequired.cs" />
+    <Compile Include="Task\Specifications\TaskNameRequired.cs" />
+    <Compile Include="Task\TaskBusinessRules.cs" />
+    <Compile Include="User\UserBusinessRules.cs" />
+    <Compile Include="Task\Task.cs" />
+    <Compile Include="User\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Task\ITaskRepository.cs" />
+    <Compile Include="Task\QueryParams\TaskQueryParam.cs" />
+    <Compile Include="User\IUserRepository.cs" />
+    <Compile Include="User\QueryParams\UserQueryParam.cs" />
+    <Compile Include="Resources\BusinessRules.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BusinessRules.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Address\Specifications\AddressCountryRequired.cs" />
+    <Compile Include="User\Specifications\UserNameRequired.cs" />
+    <Compile Include="User\Validator\UserValidator.cs" />
+    <Compile Include="Address\Address.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SampleApp.Common.DAL\SampleApp.Common.DAL.csproj">
+      <Project>{824247C1-D2AF-4050-91B8-4156BC1DB714}</Project>
+      <Name>SampleApp.Common.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SampleApp.Common.Domain\SampleApp.Common.Domain.csproj">
+      <Project>{EFD50130-86EB-4631-9687-24852F57446A}</Project>
+      <Name>SampleApp.Common.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\BusinessRules.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BusinessRules.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

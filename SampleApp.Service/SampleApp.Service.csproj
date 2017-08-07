@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FF968DF4-364C-4862-97AF-0519F8D3F45A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SampleApp.Service</RootNamespace>
+    <AssemblyName>SampleApp.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Email\ExceptionEmailArguments.cs" />
+    <Compile Include="Configuration\IServiceConfigOptions.cs" />
+    <Compile Include="Task\EnrichedTaskService.cs" />
+    <Compile Include="User\EnrichedUserService.cs" />
+    <Compile Include="Task\Mapper\TaskDtoMapper.cs" />
+    <Compile Include="Task\Mapper\ITaskDtoMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Task\DTO\TaskDTO.cs" />
+    <Compile Include="Task\DTO\TaskEditDTO.cs" />
+    <Compile Include="Task\ITaskService.cs" />
+    <Compile Include="Task\Messaging\DeleteTaskRequest.cs" />
+    <Compile Include="Task\Messaging\DeleteTaskResponse.cs" />
+    <Compile Include="Task\Messaging\GetTaskRequest.cs" />
+    <Compile Include="Task\Messaging\GetTaskResponse.cs" />
+    <Compile Include="Task\Messaging\GetTasksRequest.cs" />
+    <Compile Include="Task\Messaging\GetTasksResponse.cs" />
+    <Compile Include="Task\Messaging\InsertTaskRequest.cs" />
+    <Compile Include="Task\Messaging\InsertTaskResponse.cs" />
+    <Compile Include="Task\Messaging\UpdateTaskRequest.cs" />
+    <Compile Include="Task\Messaging\UpdateTaskResponse.cs" />
+    <Compile Include="Task\TaskService.cs" />
+    <Compile Include="User\DTO\UserDTO.cs" />
+    <Compile Include="User\DTO\UserEditDTO.cs" />
+    <Compile Include="User\IUserService.cs" />
+    <Compile Include="User\Mapper\IUserDtoMapper.cs" />
+    <Compile Include="User\Mapper\UserDtoMapper.cs" />
+    <Compile Include="User\Messaging\DeleteUserRequest.cs" />
+    <Compile Include="User\Messaging\DeleteUserResponse.cs" />
+    <Compile Include="User\Messaging\GetUserRequest.cs" />
+    <Compile Include="User\Messaging\GetUserResponse.cs" />
+    <Compile Include="User\Messaging\GetUsersRequest.cs" />
+    <Compile Include="User\Messaging\GetUsersResponse.cs" />
+    <Compile Include="User\Messaging\InsertUserRequest.cs" />
+    <Compile Include="User\Messaging\InsertUserResponse.cs" />
+    <Compile Include="User\Messaging\UpdateUserRequest.cs" />
+    <Compile Include="User\Messaging\UpdateUserResponse.cs" />
+    <Compile Include="User\UserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SampleApp.Common.DAL\SampleApp.Common.DAL.csproj">
+      <Project>{824247C1-D2AF-4050-91B8-4156BC1DB714}</Project>
+      <Name>SampleApp.Common.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SampleApp.Common.Domain\SampleApp.Common.Domain.csproj">
+      <Project>{efd50130-86eb-4631-9687-24852f57446a}</Project>
+      <Name>SampleApp.Common.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SampleApp.Common.Service\SampleApp.Common.Service.csproj">
+      <Project>{5F9A98E2-C290-48EF-B6A6-BCDBAEE6B701}</Project>
+      <Name>SampleApp.Common.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SampleApp.Common\SampleApp.Common.csproj">
+      <Project>{6726FEC3-514B-420A-93DC-4F391083BD9D}</Project>
+      <Name>SampleApp.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SampleApp.Domain\SampleApp.Domain.csproj">
+      <Project>{0CF702BF-F486-43CE-9184-E5EADDEAB7B4}</Project>
+      <Name>SampleApp.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
