@@ -20,7 +20,12 @@ namespace SampleApp.Common.DAL.UnitOfWork
 
         public void RegisterUpdate(IAggregateRoot aggregateRoot, IUnitOfWorkRepository repository)
         {
-            if (aggregateRoot != null && !_updatedAggregates.ContainsKey(aggregateRoot))
+            if (aggregateRoot != null && _updatedAggregates.ContainsKey(aggregateRoot))
+            {
+                _updatedAggregates.Remove(aggregateRoot);
+            }
+
+            if (aggregateRoot != null)
             {
                 _updatedAggregates.Add(aggregateRoot, repository);
             }
@@ -60,6 +65,10 @@ namespace SampleApp.Common.DAL.UnitOfWork
                 {
                     _deletedAggregates[aggregateRoot].PersistDeletion(aggregateRoot);
                 }
+
+                _insertedAggregates.Clear();
+                _updatedAggregates.Clear();
+                _deletedAggregates.Clear();
 
                 scope.Complete();
             }

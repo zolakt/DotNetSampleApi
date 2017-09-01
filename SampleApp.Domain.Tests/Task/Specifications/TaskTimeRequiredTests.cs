@@ -40,7 +40,7 @@ namespace SampleApp.Domain.Tests.Task.Specifications
 
             Assert.IsTrue(broken.Any());
             Assert.AreEqual(1, broken.Count());
-            Assert.AreEqual(TaskBusinessRules.TaskTimeRequired.RuleDescription, broken.First().RuleDescription);
+            Assert.AreEqual(TaskBusinessRules.TaskTimeRequired.Description, broken.First().Description);
         }
     }
 }

@@ -15,9 +15,9 @@ namespace SampleApp.DAL.Memory.DataContext
             Users = databaseInitializer.InitializeUsers();
         }
 
-        public ICollection<Task> Tasks { get; }
+        public IEnumerable<Task> Tasks { get; }
 
-        public ICollection<User> Users { get; }
+        public IEnumerable<User> Users { get; }
 
 
         public IEnumerable<TEntityType> GetAllEntities<TEntityType>() where TEntityType : class

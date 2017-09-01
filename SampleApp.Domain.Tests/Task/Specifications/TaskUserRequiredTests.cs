@@ -43,7 +43,7 @@ namespace SampleApp.Domain.Tests.Task.Specifications
 
             Assert.IsTrue(broken.Any());
             Assert.AreEqual(1, broken.Count());
-            Assert.AreEqual(TaskBusinessRules.TaskUserRequired.RuleDescription, broken.First().RuleDescription);
+            Assert.AreEqual(TaskBusinessRules.TaskUserRequired.Description, broken.First().Description);
         }
 
         [TestMethod]
@@ -62,7 +62,7 @@ namespace SampleApp.Domain.Tests.Task.Specifications
 
             Assert.IsTrue(broken.Any());
             Assert.AreEqual(1, broken.Count());
-            Assert.AreEqual(TaskBusinessRules.TaskUserRequired.RuleDescription, broken.First().RuleDescription);
+            Assert.AreEqual(TaskBusinessRules.TaskUserRequired.Description, broken.First().Description);
         }
     }
 }

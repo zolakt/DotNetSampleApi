@@ -6,8 +6,8 @@ namespace SampleApp.DAL.Memory.DataContext
 {
     public interface IDomainContext : IDataContext
     {
-        ICollection<Task> Tasks { get; }
+        IEnumerable<Task> Tasks { get; }
 
-        ICollection<User> Users { get; }
+        IEnumerable<User> Users { get; }
     }
 }

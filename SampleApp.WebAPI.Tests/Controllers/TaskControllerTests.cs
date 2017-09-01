@@ -212,7 +212,7 @@ namespace SampleApp.WebAPI.Tests.Controllers
             };
 
             var expected = new InsertTaskResponse {
-                Result = false,
+                Result = true,
                 Exception = new ValidationException("name")
             };
 

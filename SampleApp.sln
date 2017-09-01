@@ -35,8 +35,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp.WebAPI.Tests", "S
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{31EAF999-6B10-42A6-A04D-49E6E44AE3BB}"
 	ProjectSection(SolutionItems) = preProject
-		README.txt = README.txt
+		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp.DAL.EF", "SampleApp.DAL.EF\SampleApp.DAL.EF.csproj", "{13D2FDA4-306B-413E-BCD1-32B068EC58F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp.WebApp", "SampleApp.WebApp\SampleApp.WebApp.csproj", "{87FC5B00-136F-47D6-A8D4-5A382A5E0BA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -104,6 +108,14 @@ Global
 		{82DD0A57-7FE8-4C8C-8F76-7991F66CE566}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82DD0A57-7FE8-4C8C-8F76-7991F66CE566}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82DD0A57-7FE8-4C8C-8F76-7991F66CE566}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13D2FDA4-306B-413E-BCD1-32B068EC58F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13D2FDA4-306B-413E-BCD1-32B068EC58F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13D2FDA4-306B-413E-BCD1-32B068EC58F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13D2FDA4-306B-413E-BCD1-32B068EC58F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87FC5B00-136F-47D6-A8D4-5A382A5E0BA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87FC5B00-136F-47D6-A8D4-5A382A5E0BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87FC5B00-136F-47D6-A8D4-5A382A5E0BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87FC5B00-136F-47D6-A8D4-5A382A5E0BA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

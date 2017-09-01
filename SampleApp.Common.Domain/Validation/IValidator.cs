@@ -7,5 +7,7 @@ namespace SampleApp.Common.Domain.Validation
         bool IsValid(TEntityType entity);
 
         IEnumerable<BusinessRule> GetBrokenRules(TEntityType entity);
+
+        ValidationRulesMap GetRulesDetails();
     }
 }

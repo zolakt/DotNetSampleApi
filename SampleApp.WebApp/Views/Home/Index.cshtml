@@ -1,0 +1,59 @@
+﻿@model SampleApp.WebApp.ViewModels.Home.IndexViewModel
+
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Last @Model.TasksLimit tasks</h2>
+        @if (Model.RecentTasks.Any())
+        {
+            <table class="table table-striped">
+                <tr>
+                    <th>Task name</th>
+                    <th>Due time</th>
+                    <th>User</th>
+                </tr>
+                @foreach (var item in Model.RecentTasks)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Time.ToString()</td>
+                        <td>@item.UserLastName @item.UserFirstName</td>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <p>No tasks</p>
+        }
+    </div>
+
+    <div class="col-md-6" ">
+        <h2>Last @Model.UsersLimit users</h2>
+        @if (Model.RecentUsers.Any())
+        {
+            <table class="table table-striped">
+                <tr>
+                    <th>Name</th>
+                    <th>Country</th>
+                    <th>City</th>
+                </tr>
+                @foreach (var item in Model.RecentUsers)
+                {
+                    <tr>
+                        <td>@item.LastName @item.FirstName</td>
+                        <td>@item.Country</td>
+                        <td>@item.City</td>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <p>No users</p>
+        }
+    </div>
+</div>

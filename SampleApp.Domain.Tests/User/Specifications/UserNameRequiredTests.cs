@@ -50,7 +50,7 @@ namespace SampleApp.Domain.Tests.User.Specifications
 
             Assert.IsTrue(broken.Any());
             Assert.AreEqual(1, broken.Count());
-            Assert.AreEqual(UserBusinessRules.UserNameRequired.RuleDescription, broken.First().RuleDescription);
+            Assert.AreEqual(UserBusinessRules.UserNameRequired.Description, broken.First().Description);
         }
 
         [TestMethod]
@@ -73,7 +73,7 @@ namespace SampleApp.Domain.Tests.User.Specifications
 
             Assert.IsTrue(broken.Any());
             Assert.AreEqual(1, broken.Count());
-            Assert.AreEqual(UserBusinessRules.UserNameRequired.RuleDescription, broken.First().RuleDescription);
+            Assert.AreEqual(UserBusinessRules.UserNameRequired.Description, broken.First().Description);
         }
     }
 }

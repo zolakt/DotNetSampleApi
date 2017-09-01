@@ -13,6 +13,9 @@ namespace SampleApp.Common.DAL.Repositories
 
         [DataMember]
         public TSortParams Sort { get; set; }
+
+        [DataMember]
+        public PaginationOptions Pagination { get; set; }
     }
 
     [DataContract]
@@ -23,6 +26,9 @@ namespace SampleApp.Common.DAL.Repositories
 
         [DataMember]
         public TIncludeParams Include { get; set; }
+
+        [DataMember]
+        public PaginationOptions Pagination { get; set; }
     }
 
     [DataContract]
@@ -30,5 +36,8 @@ namespace SampleApp.Common.DAL.Repositories
     {
         [DataMember]
         public TFilterParams Filter { get; set; }
+
+        [DataMember]
+        public PaginationOptions Pagination { get; set; }
     }
 }

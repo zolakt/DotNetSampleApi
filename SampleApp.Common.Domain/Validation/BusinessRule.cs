@@ -1,12 +1,11 @@
-﻿namespace SampleApp.Common.Domain.Validation
+﻿using System.Collections.Generic;
+
+namespace SampleApp.Common.Domain.Validation
 {
     public class BusinessRule
     {
-        public BusinessRule(string ruleDescription)
-        {
-            RuleDescription = ruleDescription;
-        }
+        public string Description { get; set; }
 
-        public string RuleDescription { get; }
+        public IEnumerable<string> Tags { get; set; }
     }
 }

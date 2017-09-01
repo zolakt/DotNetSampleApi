@@ -9,7 +9,7 @@ using SampleApp.Common.Email;
 using SampleApp.Common.Logging;
 using SampleApp.Common.OutputWriter;
 using SampleApp.Common.Service;
-using SampleApp.DAL.Memory.DataContext;
+using SampleApp.DAL.EF.DataContext;
 using SampleApp.Domain.Address;
 using SampleApp.Domain.Address.Specifications;
 using SampleApp.Domain.Task;
@@ -36,7 +36,7 @@ namespace SampleApp.WebAPI.DependencyResolution
                 scan.AssemblyContainingType<IDataContext>();
                 scan.AssemblyContainingType<IAggregateRoot>();
                 scan.AssemblyContainingType<ServiceBase>();
-                scan.AssemblyContainingType<InMemoryDataContext>();
+                scan.AssemblyContainingType<EfDataContext>();
                 scan.AssemblyContainingType<User>();
                 scan.AssemblyContainingType<ITaskService>();
                 scan.WithDefaultConventions();
@@ -54,7 +54,7 @@ namespace SampleApp.WebAPI.DependencyResolution
             For<IAppConfig>().Use<WebApiAppConfig>();
             For<IAppConfig<IServiceConfigOptions>>().Use<WebApiAppConfig>();
             For<ICacheStorage>().Use<SystemRuntimeCacheStorage>();
-            For<IDataContextFactory<IDomainContext>>().Use<InMemoryDataContextFactory>().Singleton();
+            For<IDataContextFactory<IDomainContext>>().Use<EfDataContextFactory>().Singleton();
             For<IUnitOfWork>().Use<InMemoryUnitOfWork>().Singleton();
             For<IOutputWriter>().Use<ConsoleOutputWritter>();
             For<ILoggingService>().Use<ConsoleLoggingService>();

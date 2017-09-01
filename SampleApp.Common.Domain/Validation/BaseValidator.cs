@@ -11,5 +11,7 @@ namespace SampleApp.Common.Domain.Validation
         }
 
         public abstract IEnumerable<BusinessRule> GetBrokenRules(TEntityType entity);
+
+        public abstract ValidationRulesMap GetRulesDetails();
     }
 }

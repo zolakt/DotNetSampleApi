@@ -150,7 +150,7 @@ namespace SampleApp.DAL.Memory.Tests.DataContext
 
             context.AddEntity(testObj);
 
-            Assert.AreEqual(1, context.Users.Count);
+            Assert.AreEqual(1, context.Users.Count());
         }
 
         [TestMethod]
@@ -203,7 +203,7 @@ namespace SampleApp.DAL.Memory.Tests.DataContext
 
             var last = context.Users.Last();
 
-            Assert.AreEqual(2, context.Users.Count);
+            Assert.AreEqual(2, context.Users.Count());
             Assert.AreEqual(user2.Id, last.Id);
             Assert.AreEqual(expectedName, last.FirstName);
         }
@@ -239,7 +239,7 @@ namespace SampleApp.DAL.Memory.Tests.DataContext
 
             context.UpdateEntity(user3);
 
-            Assert.AreEqual(3, context.Users.Count);
+            Assert.AreEqual(3, context.Users.Count());
         }
 
         [TestMethod]
@@ -303,7 +303,7 @@ namespace SampleApp.DAL.Memory.Tests.DataContext
 
             context.DeleteEntity(user3);
 
-            Assert.AreEqual(1, context.Users.Count);
+            Assert.AreEqual(1, context.Users.Count());
         }
 
         [TestMethod]
@@ -337,7 +337,7 @@ namespace SampleApp.DAL.Memory.Tests.DataContext
 
             context.DeleteEntity(user3);
 
-            Assert.AreEqual(2, context.Users.Count);
+            Assert.AreEqual(2, context.Users.Count());
         }
 
         [TestMethod]

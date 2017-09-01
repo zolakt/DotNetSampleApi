@@ -39,7 +39,7 @@ namespace SampleApp.Domain.Tests.Address.Specifications
 
             Assert.IsTrue(broken.Any());
             Assert.AreEqual(1, broken.Count());
-            Assert.AreEqual(AddressBusinessRules.AddressCountryRequired.RuleDescription, broken.First().RuleDescription);
+            Assert.AreEqual(AddressBusinessRules.AddressCountryRequired.Description, broken.First().Description);
         }
     }
 }

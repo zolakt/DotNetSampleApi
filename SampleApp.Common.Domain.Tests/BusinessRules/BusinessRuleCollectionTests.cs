@@ -10,7 +10,11 @@ namespace SampleApp.Common.Domain.Tests.BusinessRules
         [TestMethod()]
         public void AddRulesTest()
         {
-            var rule = new BusinessRule("test");
+            var rule = new BusinessRule
+            {
+                Description = "test"
+            };
+
             var rules = new BusinessRuleCollection();
 
             rules.AddRule(rule);
@@ -21,7 +25,11 @@ namespace SampleApp.Common.Domain.Tests.BusinessRules
         [TestMethod()]
         public void ClearRulesTest()
         {
-            var rule = new BusinessRule("test");
+            var rule = new BusinessRule
+            {
+                Description = "test"
+            };
+
             var rules = new BusinessRuleCollection();
 
             rules.AddRule(rule);
@@ -34,7 +42,11 @@ namespace SampleApp.Common.Domain.Tests.BusinessRules
         [TestMethod()]
         public void HasRulesTest()
         {
-            var rule = new BusinessRule("test");
+            var rule = new BusinessRule
+            {
+                Description = "test"
+            };
+
             var rules = new BusinessRuleCollection();
 
             Assert.IsFalse(rules.HasRules());
@@ -47,16 +59,24 @@ namespace SampleApp.Common.Domain.Tests.BusinessRules
         [TestMethod()]
         public void GetRulesSummaryTest()
         {
-            var rule1 = new BusinessRule("test");
-            var rule2 = new BusinessRule("test2");
+            var rule1 = new BusinessRule
+            {
+                Description = "test1"
+            };
+
+            var rule2 = new BusinessRule
+            {
+                Description = "test2"
+            };
+
             var rules = new BusinessRuleCollection();
 
             rules.AddRule(rule1);
             rules.AddRule(rule2);
 
-            var expected = "test" + Environment.NewLine + "test2" + Environment.NewLine;
+            var expected = "test1" + Environment.NewLine + "test2";
 
-            Assert.AreEqual(expected, rules.GetRulesSummary());
+            Assert.AreEqual(expected, string.Join(Environment.NewLine, rules.GetRulesSummary()));
         }
     }
 }

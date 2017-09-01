@@ -34,7 +34,7 @@ namespace SampleApp.Common.Domain.Validation
             return _rules.Any();
         }
 
-        public string GetRulesSummary()
+        public IEnumerable<string> GetRulesSummary()
         {
             var issues = new StringBuilder();
 
@@ -42,12 +42,10 @@ namespace SampleApp.Common.Domain.Validation
             {
                 foreach (var businessRule in _rules)
                 {
-                    issues.AppendLine(businessRule.RuleDescription);
+                    yield return businessRule.Description;
                 }
 
             }
-
-            return issues.ToString();
         }
     }
 }

@@ -1,16 +1,26 @@
-﻿using System.Collections.Generic;
-using SampleApp.Common.Domain.Validation;
+﻿using SampleApp.Common.Domain.Validation;
+using System.Collections.Generic;
 
 namespace SampleApp.Domain.Address.Specifications
 {
     public class AddressCountryRequired : ISpecification<Address>
     {
+        public IEnumerable<BusinessRule> Rules
+        {
+            get
+            {
+                return new[] { AddressBusinessRules.AddressCountryRequired };
+            }
+        }
+
         public IEnumerable<BusinessRule> GetBrokenRules(Address entity)
         {
             if (string.IsNullOrEmpty(entity.Country))
             {
-                yield return AddressBusinessRules.AddressCountryRequired;
+                return Rules;
             }
+
+            return new List<BusinessRule>();
         }
     }
 }

@@ -1,0 +1,48 @@
+﻿@model SampleApp.WebApp.ViewModels.Tasks.IndexViewModel
+
+@{
+    ViewBag.Title = "Tasks";
+}
+
+<h2>Tasks</h2>
+@if (Model.Tasks.Any())
+{
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>Task name</th>
+            <th>Due time</th>
+            <th>User</th>
+            <th colspan="2"></th>
+        </tr>
+        @foreach (var item in Model.Tasks)
+        {
+            <tr>
+
+                <td>@item.Name</td>
+
+                <td>@item.Time.ToString()</td>
+
+                <td>@item.UserLastName @item.UserFirstName</td>
+
+                <td>
+                    <a href="@Url.Action("Update", "Tasks", new { id = item.Id })">
+                        <i class="glyphicon glyphicon-edit"></i> Edit
+                    </a>
+                </td>
+
+                <td>
+                    <a href="@Url.Action("Delete", "Tasks", new { id = item.Id })" class="delete-btn">
+                        <i class="glyphicon glyphicon-remove"></i> Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+} else
+{
+    <p>No tasks</p>
+}
+
+<div>
+    <a class="btn btn-success" href="@Url.Action("Create", "Tasks")">Add new task</a>
+</div>

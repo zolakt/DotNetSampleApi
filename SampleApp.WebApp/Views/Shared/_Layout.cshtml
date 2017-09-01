@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoList Sample App</title>
+    <link type="text/css" href="~/CSS/main.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="@Url.Action("Index", "Home")">To-Do List</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="@Url.Action("Index", "Tasks")">Tasks</a></li>
+                        <li><a href="@Url.Action("Index", "Users")">Users</a></li>
+                    </ul>
+                </div>
+        </nav>
+        <div class="title">
+            @RenderSection("title", required: false)
+        </div>
+        <div></div>
+    </header>
+
+    <main class="container">
+        @RenderBody()
+    </main>
+
+    <footer class="footer navbar-fixed-bottom">
+        <div class="container">&copy; @DateTime.Now.Year - TodoList Sample</div>
+    </footer>
+
+    <script type="text/javascript" src="~/JS/main.js"></script>
+
+    @RenderSection("Scripts", false)
+</body>
+</html>

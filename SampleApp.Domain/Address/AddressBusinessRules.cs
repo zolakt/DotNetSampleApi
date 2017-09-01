@@ -4,7 +4,9 @@ namespace SampleApp.Domain.Address
 {
     public static class AddressBusinessRules
     {
-        public static readonly BusinessRule AddressCountryRequired =
-            new BusinessRule(Resources.BusinessRules.AddressCountryRequired);
+        public static readonly BusinessRule AddressCountryRequired = new BusinessRule
+        {
+            Description = Resources.BusinessRules.AddressCountryRequired
+        };
     }
 }
